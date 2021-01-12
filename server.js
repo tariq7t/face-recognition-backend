@@ -12,10 +12,10 @@ const db = knex({
   // Enter your own database information here based on what you created
   client: 'pg',
   connection: {
-    host : 'postgresql-lively-95384',
-    user : '',
-    password : '',
-    database : 'smartbrain'
+    host : process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
 });
 
